@@ -10,7 +10,7 @@ pipeline {
                     def imageTag = 'latest'
 
                     // Pull the Database Docker image from Docker Hub
-                    sh "docker pull ${mlflops/docker_db}:${latest}"
+                    sh "docker pull ${imageName}:${imageTag}" // Use the defined variables here
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                     def containerName = 'database-service-container'
 
                     // Run the Database service container from the pulled image
-                    sh "docker run --name ${database-service-container} -d -p 5432:5432 ${mlflops/docker_db}:${latest}"
+                    sh "docker run --name ${containerName} -d -p 5432:5432 ${imageName}:${imageTag}" // Use the defined variables here
                 }
             }
         }
