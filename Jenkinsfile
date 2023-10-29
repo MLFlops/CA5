@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        // Use the Docker tool configured in Jenkins
+        docker 'Docker'
+    }
+
     stages {
         stage('Pull WebServer Image') {
             steps {
