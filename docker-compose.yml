@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: mlflops/web-server  # Replace with your actual image name
+    ports:
+      - "3000:3000"  # Map the container's port 3000 to your host machine's port 3000
+    depends_on:
+      - db  # This ensures that the web service starts after the database service
+
+  db:
+    image: mlflops/docker_db  # Replace with your actual image name
+    environment:
+      POSTGRES_DB: mlflops  # Set the name of your database
+      POSTGRES_USER: bms  # Set your PostgreSQL user
+      POSTGRES_PASSWORD: mlflops123  # Set your PostgreSQL password
