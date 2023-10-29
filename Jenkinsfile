@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Define the Docker image name and tag
                     def imageName = 'mlflops/docker_db'
-                    def imageTag = 'latest'
+                    def imageTag = '1.0'
 
                     // Pull the Database Docker image from Docker Hub
                     sh "docker pull ${imageName}:${imageTag}" // Use the defined variables here
